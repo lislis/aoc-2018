@@ -8,7 +8,6 @@ fn main() {
     file.read_to_string(&mut content).expect("cannot read");
     let freqs = content.split("\n").collect::<Vec<&str>>();
     let list_freq_changes = freqs.iter()
-        .map(|n| n.replace("+", ""))
         .map(|n| n.trim().parse::<i64>())
         .collect::<Vec<Result<i64, _>>>();
 
